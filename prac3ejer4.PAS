@@ -20,7 +20,7 @@ type
 		costTMb:real;
 		
 	end;
-procedure leerLinea(var cliente:clien);{lee las lineas del cliente}
+procedure leerLinea(var cliente:clien);	{lee las lineas del cliente}
 var
     i:integer;
 begin
@@ -38,9 +38,9 @@ begin
 		cliente.totalMb:=cliente.totalmb+cliente.linea.mb;
 	end;	
 	cliente.costTMin:=cliente.totalmin*costMin;
-	cliente.costTMb:=cliente.totalmb*costMb;
-		
+	cliente.costTMb:=cliente.totalmb*costMb;	
 end;
+{Fin de lectura de lineas}
 Procedure leerCliente(var cliente:clien);{lee los cliente de la empresa}
 begin
 	writeln('CARGA DE CLIENTES');
@@ -50,6 +50,7 @@ begin
 	readln(cliente.cantLinea);
 	leerLinea(cliente);
 end;
+{fin de lectura de clientes}
 var
     clientes:clien;
 	i:integer;
