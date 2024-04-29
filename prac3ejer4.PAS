@@ -43,7 +43,7 @@ begin
 end;
 Procedure leerCliente(var cliente:clien);{lee los cliente de la empresa}
 begin
-	writeln('CLIENTES');
+	writeln('CARGA DE CLIENTES');
 	write('codigo de cliente: ');
 	readln(cliente.codigo);
 	Write('cantidad de lineas: ');
@@ -56,8 +56,16 @@ var
 {Programa Principal}
 begin
     ClrScr;
+	writeln('*** FACTURACION CONPANIA TELEFONICA ****');
 	for i:= 1 to nClient do begin
 		leerCliente(clientes);
-		writeln('la cantidad de min es de ',clientes.totalmin,' y la cantidad de mb es de ',clientes.totalMb,' el total a abonar es ',clientes.costTMin+clientes.costTMb:3:2);
+		ClrScr;
+		writeln('Facturacion del cliente');
+		writeln('- cantidad de min total consumido : ',clientes.totalmin);
+		writeln('- cantidad de Mb consumidos : ',clientes.totalMb);
+		writeln('- TOTAL: $',clientes.costTMin+clientes.costTMb:3:2);
+		writeln('Precione una tecla para continuar....');
+		readKey;
+		ClrScr;
 	end;
 end.
